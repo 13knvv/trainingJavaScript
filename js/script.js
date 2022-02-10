@@ -3,30 +3,36 @@ const cl = (massege) => console.log(massege)
 const cd = (massege) => console.dir(massege)
 
 /////////////////////////
-//Break camelCase
-// Complete the solution so that the function will break up camel casing, using a space between words.
+// task: Persistent Bugger
+// Write a function, persistence, that takes in a positive parameter num and returns its multiplicative persistence, which is the number of times you must multiply the digits in num until you reach a single digit.
 
-// Example
-// "camelCasing"  =>  "camel Casing"
-// "identifier"   =>  "identifier"
-// ""             =>  ""
+// For example (Input --> Output):
 
-function solution(string) {
-    let result = []
+// 39 --> 3 (because 3*9 = 27, 2*7 = 14, 1*4 = 4 and 4 has only one digit)
+// 999 --> 4 (because 9*9*9 = 729, 7*2*9 = 126, 1*2*6 = 12, and finally 1*2 = 2)
+// 4 --> 0 (because 4 is already a one-digit number)
+////////////////////////////
+// solve task: Persistent Bugger
 
-    string.split('').forEach((letter, index, arr) => {
-       if (letter.codePointAt() < 97 ) {
-        result.push(' ')
-       }
-       result.push(letter)
-    })
+function persistence(num) {
+    let i = 0
 
-    return result.join('')
-}
+      function mul(num) {
+        if (num < 10) return i
+        let nextNum = String(num).split('')
+            .reduce((result, number) => result *= number, 1)
+        i++
+        mul(nextNum)
+    }
+
+    mul(num)
+    return i
+ }
 
 
 
 
-
-cl(solution('camelCasing'))//, 'camel Casing', 'Unexpected result')
-cl(solution('camelCasingTest'))//, 'camel Casing Test'
+cl(persistence(39))//3
+cl(persistence(4))//0
+cl(persistence(25))//2
+cl(persistence(999))//4

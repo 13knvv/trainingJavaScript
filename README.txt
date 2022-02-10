@@ -1,1 +1,1 @@
-traning
+I`m traning JavaScript here
