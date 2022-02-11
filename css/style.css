@@ -8,10 +8,23 @@
 }
 
 body {
-    background-color: rgb(206, 203, 203); 
-    display: flex;
-    justify-content: start; 
+    background-color: rgb(206, 203, 203);
 }
 
+.cont {
+    position: relative;
+    top: 100px;
+    left: 100px;
+    border: 2px solid black;
+    width: 200px;
+    height: 200px;
+}
 
-
+.test {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    width: 40px;
+    height: 30px;
+    border: 4px solid black;
+}
