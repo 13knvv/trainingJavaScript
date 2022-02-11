@@ -4,7 +4,7 @@ const cd = (massege) => console.dir(massege)
 
 /////////////////////////
 // task: 
-///test2test
+///test2test 
 // solve task: 
 const cont = document.querySelector('.cont') 
 const tests = document.querySelectorAll('.test')
