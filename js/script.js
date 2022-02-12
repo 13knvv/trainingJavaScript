@@ -3,48 +3,41 @@ const cl = (massege) => console.log(massege)
 const cd = (massege) => console.dir(massege)
 
 /////////////////////////
-// task: 
-///test2test 
+// task: Count of positives / sum of negatives 
+//
+// Given an array of integers.
+
+// Return an array, where the first element is the count of positives numbers and the second element is sum of negative numbers. 0 is neither positive nor negative.
+
+// If the input array is empty or null, return an empty array.
+
+// Example
+// For input [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15], you should return [10, -65].
 // solve task: 
-const cont = document.querySelector('.cont') 
-const tests = document.querySelectorAll('.test')
 
-
-for (let test of tests) {
-    test.addEventListener('pointerdown', pointerdown)
-    test.ondragstart = () => false
-}
-
-function pointerdown(e) {
-        e.target.addEventListener('pointermove', pointermove)
-        e.target.setPointerCapture(e.pointerId) 
-}
-
-function pointermove(e) {
-    const contRect = cont.getBoundingClientRect()
- 
-    e.target.style.left =  e.clientX - contRect.x - e.target.offsetWidth/2 +'px'
-    e.target.style.top =  e.clientY - contRect.y - e.target.offsetHeight/2 +'px'
+function countPositivesSumNegatives(input) {
+    let quantity = 0
+    let sum = 0
     
-    if (e.target.style.left < 0+'px') {
-        e.target.style.left = 0 +'px'
-    }
+    if (input == undefined || input.length === 0  ) return []
 
-    if (contRect.left + e.target.offsetLeft + e.target.offsetWidth  > contRect.right -3) {
-        e.target.style.left = contRect.right - contRect.left - e.target.offsetWidth - 3 +'px'
-    }
+    input.forEach(num => {
+        if (num > 0) quantity += 1
+        if (num < 0) sum += num
+    })
 
-    if (e.target.style.top < 0+'px') {
-        e.target.style.top = 0 +'px'
-    }
+    if (quantity === 0 && sum ===0) return []
 
-    if (contRect.top + e.target.offsetTop + e.target.offsetHeight  > contRect.bottom -3) {
-        e.target.style.top = contRect.bottom - contRect.top - e.target.offsetHeight - 3 +'px'
-    }
-
-    e.target.addEventListener('pointerup', deletePointermove)
- }   
-
-function deletePointermove(e) {
-    e.target.removeEventListener('pointermove', pointermove)
+    return [quantity, sum]
 }
+    
+
+
+cl( countPositivesSumNegatives([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15]))
+// [10, -65];
+cl( countPositivesSumNegatives([0, 2, 3, 0, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14]))
+//[8, -50];
+cl( countPositivesSumNegatives())
+//[]
+cl( countPositivesSumNegatives([0,0]))
+//[]
