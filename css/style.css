@@ -11,20 +11,13 @@ body {
     background-color: rgb(206, 203, 203);
 }
 
-.cont {
+#mouse {
     position: relative;
-    top: 100px;
-    left: 100px;
-    border: 2px solid black;
-    width: 200px;
-    height: 200px;
-}
-
-.test {
-    
-    top: 50px;
-    left: 50px;
-    width: 40px;
+    left: 10px;
+    top: 10px;
+    width: 30px;
     height: 30px;
-    border: 4px solid black;
+    background-color: rgb(126, 128, 128);
+    border-radius: 50%;
+    transition: all 300ms linear;
 }

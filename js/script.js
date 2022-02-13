@@ -1,37 +1,41 @@
 "use strict";
 const cl = (massege) => console.log(massege)
-const cd = (massege) => console.dir(massege)
 
 /////////////////////////
-// task: Two Sum 
-//Write a function that takes an array of numbers (integers for the tests)
-// and a target number. It should find two different items in the array that,
-// when added together, give the target value. The indices of these items
-// should then be returned in a tuple like so: (index1, index2).
+////////////////////////
 
-// For the purposes of this kata, some tests may have multiple answers; 
-// any valid solutions will be accepted.
+const mouse = document.getElementById('mouse')
+let speed = 5
+const stepSpeed = 5
+const maxSpeed = 100
+const minSpeed = 3
 
-// The input will always be valid (numbers will be an array of length 2 or 
-// greater, and all of the items will be numbers; target will always be
-// the sum of two different items from that array).
-// solve task: 
 
-function twoSum(numbers, target) {
-    for (let i = 0; i < numbers.length; i++) {
-        for (let k = i+1; k < numbers.length; k++) {
-            if (numbers[i] + numbers[k] === target) {
-                return [i, k]
-            }
-        }
-    }
-}
+document.body.addEventListener('keydown', mouseStart)
+document.body.addEventListener('keyup', mouseStop)
+
+function mouseStart(e) {
+    if (speed < maxSpeed) speed += stepSpeed
     
+    if (e.code === 'KeyD') {
+        let left = mouse.offsetLeft
+        mouse.style.left = left + speed +'px'
+    }
+    if (e.code === 'KeyA') {
+        let left = mouse.offsetLeft
+        mouse.style.left = left - speed +'px'
+    }
+    if (e.code === 'KeyW') {
+        let top = mouse.offsetTop
+        mouse.style.top = top - speed +'px'
+    }
+    if (e.code === 'KeyS') {
+        let top = mouse.offsetTop
+        mouse.style.top = top + speed +'px'
+    }
 
+}
 
-cl(twoSum([1,2,3], 4))
-// [0, 2];
-cl(twoSum([1234,5678,9012], 14690))
-//[1, 2];
-cl(twoSum([2,2,3], 4))
-//[0, 1]
+function mouseStop (e) {
+    speed = minSpeed
+}
