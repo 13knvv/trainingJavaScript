@@ -1,0 +1,24 @@
+:root {
+    font-size: calc(0.5em + 1vw);
+    font-size: 1em;
+}
+
+* {
+  box-sizing: border-box;  
+}
+
+body {
+    background-color: rgb(206, 203, 203);
+}
+
+#mouse {
+    position: absolute;
+    z-index: 100;
+    left: 10px;
+    top: 10px;
+    width: 30px;
+    height: 30px;
+    background-color: rgb(126, 128, 128);
+    border-radius: 50%;
+    transition: all 300ms linear;
+}
