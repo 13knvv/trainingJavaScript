@@ -11,13 +11,3 @@ body {
     background-color: rgb(206, 203, 203);
 }
 
-#mouse {
-    position: relative;
-    left: 10px;
-    top: 10px;
-    width: 30px;
-    height: 30px;
-    background-color: rgb(126, 128, 128);
-    border-radius: 50%;
-    transition: all 300ms linear;
-}
