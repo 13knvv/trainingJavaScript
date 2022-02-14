@@ -55,3 +55,9 @@ function mouseStart(e) {
 function mouseStop (e) {
     speed = minSpeed
 }
+
+for (let i = 0; i < 100; i++) {
+    let p = document.createElement('p')
+    p.textContent = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, praesentium voluptatem cumque distinctio beatae quod repellat eaque possimus quisquam quidem vitae dolores? Itaque atque distinctio, culpa voluptatem praesentium provident dolore!'
+    document.querySelector('body').append(p)
+}
