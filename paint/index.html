@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="paint.css">
+    <title>Paint</title>
+</head>
+<body>
+    <div class="paint">
+        <canvas id="paint__canvas" style="width: 1400px; height: 700px;"></canvas>
+        <div class="paint__controls">
+           <div>Color: <input type="color" class="paint__color"></div> 
+           <div>Size: 
+            <select class="paint__size">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4" selected>4</option>
+                <option value="5">5</option>
+             </select>
+        
+            </div> 
+        </div>
+        
+    </div>
+
+
+    <script src="paint.js"></script>
+</body>
+</html>

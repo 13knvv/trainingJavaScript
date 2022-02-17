@@ -1,0 +1,44 @@
+:root {
+    font-size: calc(0.5em + 1vw);
+    font-size: 1em;
+}
+
+* {
+  box-sizing: border-box;  
+}
+
+body {
+    background-color: rgb(49, 49, 49);
+
+}
+
+.paint {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* width: 70%;
+    height: 100%; */
+    margin: 0 auto;
+    padding-top: 30px;
+}
+
+#paint__canvas {
+    position: relative;
+    background-color: white;
+    width: 1400px;
+    height: 700px;
+}
+
+.paint__controls {
+    background-color: #293A4C;
+    display: flex;
+    padding: 20px;
+    width: 1400px;
+    color: rgb(255, 255, 255);
+    font-size: 2em;
+}
+
+.paint__controls div + div {
+    margin-left: 40px;
+}
