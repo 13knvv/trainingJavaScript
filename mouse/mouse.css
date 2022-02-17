@@ -11,14 +11,59 @@ body {
     background-color: rgb(206, 203, 203);
 }
 
+.wrapp {
+    max-width:  70%;
+    margin: 0 auto;
+}
+
+.wrapp *+* {
+    margin: 20px 0 0px 0;
+}
+
+header {
+    width: 100%;
+    height: 300px;
+    background-color: rgb(223, 253, 247);
+    border-radius: 30px;
+}
+
+main {
+    width: 100%;
+    height: 1000px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 30px;
+}
+
+footer {
+    width: 100%;
+    height: 100px;
+    background-color: rgb(92, 91, 91);
+    border-radius: 30px;
+}
+
 #mouse {
     position: absolute;
     z-index: 100;
     left: 10px;
     top: 10px;
-    width: 30px;
-    height: 30px;
-    background-color: rgb(126, 128, 128);
-    border-radius: 50%;
+    width: 2.5em;
+    height: 5em;
     transition: all 300ms linear;
+}
+
+.mouse__img {
+    width: 100%;
+    height: 100%;
+}
+
+.mouse__img_tail-change {
+    display: none;
+}
+
+.mouse__enter {
+    position: relative;
+    left: 0.95em;
+    bottom: 0.8em;
+    width: 0.5em;
+    height: 0.5em;
 }
