@@ -111,5 +111,4 @@ function mouseClick() {
     } // else element.blur()
     ////////// не работает element.blur()
     
-    cl(element)
 }
